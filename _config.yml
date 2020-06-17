@@ -1,5 +1,5 @@
 # Site settings
-title: "Knowledge Base"
+title: "Knowledge Book"
 description: "A place where I keep my Knowledge"
 baseurl: "" # required if used under gh-pages branch, else (under master branch) just leave empty/blank
 url: ""
