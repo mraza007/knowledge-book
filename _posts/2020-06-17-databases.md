@@ -31,7 +31,6 @@ It's used as data warehouse as it stores data in columns. It's good for analytic
 - `Amazon DocumentDB` MongoDB version, It stores JSON documents.
 - `Amazon Neptune` Its a fully managed graph database.
 - `Amazon Keyspaces` Basically Apache Cassandra. [Readmore](https://aws.amazon.com/keyspaces/)
-- 
 
 ## Database Migrations.
 There are two types of migrations.
