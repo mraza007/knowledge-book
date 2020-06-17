@@ -2,7 +2,7 @@
 layout: post
 title: Databases (AWS Services)
 tags : [aws-services,aws,databases]
-published: false
+published: true
 ---
 
 ## Database services that `AWS` offers
