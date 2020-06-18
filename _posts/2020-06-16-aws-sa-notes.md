@@ -129,3 +129,14 @@ _You can have 5 VPCs within the region by default._
 - These are firewalls that are applied at the instance level.
 - They monitor traffic going in and out of EC2 instances.
 - You can have multiple instances in a security group and you can have multipe security groups applied to the instances.
+- Security groups are stateful.
+- For example having a security group with `port 22` access applied to the ec2 instances will allow you to launch secure shell.
+
+### Instance Metadata
+Instance metadata is data about your instance that can be used to configure or manage the running instance. Its divided into categories and gives you the information about your instance such as `hostname`,`ami-id` and `etc`.
+
+You can run this command within your `ec2` in commandline to get the meta data
+
+```sh
+curl http://169.254.169.254/latest/meta-data/
+```
