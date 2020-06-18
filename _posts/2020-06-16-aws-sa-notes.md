@@ -107,3 +107,25 @@ description: notes compiled for people studying for aws solutions architect asso
 - **Regional Edge Cache**: Also part of the CloudFront network.These are larger caches that sit between `AWS` services and Edge Locations.
 - **Global Network**: Highly Available, low latency private global network interconnecting every data center, AZ and AWS region.
 
+## VPC (Virtual Private Cloud)
+- Its an isolated section of AWS where you can launch your own resources.
+- Within VPC you can create your own networks with your own `IP` ranges.
+- A VPC sits within a region and you create an VPC within that region and then you create subnets within that regions that sits within AZs. The subnets can public or private and then we launch resources within those subnets.
+_You can have 5 VPCs within the region by default._
+- A VPC Router is used to communicate within subnets and availablity zones and it has a route table that we can configure and it has an IP address range. Basically every VPC has a `CIDR`(Classless Inter-Domain Routing) block.
+- You define the IP range for your VPC.
+- You can also attach internet gateway to your VPC that sends requests to the outside internet and for that we need `igw-id` and `IP-ADDR` as destination.
+- Internet Gateways allows you to make requests to the public internet and for that we have to add the entry to the route table.
+- Each VPC has its own `CIDR` block.
+
+## EC2 (`Elastic Compute Cloud`)
+- Its an elastic service that allows you to launch compute resources on the AWS cloud. In AWS context we call EC2 instances but you can think of them as virual machines.
+- Each instance has an operating system,storage and virtual hard drive.
+- When launching instances you can choose from `AWS MarketPlace` and 
+`Community AMIs`.
+- You can connect to EC2 instances using `ssh`.
+
+### Security Groups.
+- These are firewalls that are applied at the instance level.
+- They monitor traffic going in and out of EC2 instances.
+- You can have multiple instances in a security group and you can have multipe security groups applied to the instances.
