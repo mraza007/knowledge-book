@@ -50,7 +50,11 @@ description: notes compiled for people studying for aws solutions architect asso
     + You can have upto 5000 users per `AWS` account.
     + Each user account has a friendly name and an ARN(Amazon Resource Name) which uniquely identifies the user across AWS.
     + You should always create individual IAM accounts for the users(Not to share them).
-    + A password policy can be defined for users enforcing them to have stronger passwords.
+    + A password policy can be defined for users enforcing them to have stronger passwords (applies to all users)
 
 - **IAM GROUP**: Its a collection of users that have policies attached to them such as group for  _developers_,_sys-admins_ .
+    + Its not an identity and cannot be identified as principal in an IAM policy.
+    + use groups to assigns permissions to the users.
+    + always assign the least priviledges when assigning permissions.
+
 - **IAM ROLES**:
