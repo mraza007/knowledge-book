@@ -182,4 +182,8 @@ You can setup cloudwatch alarms on `ec2` instances to help monitor the instances
     + Associated with a private IP address on the instance.
     + **Note:** Elastic Fabric Adapter is a network device that you can attach to reduce latency and increase throughput for distributed HPC(High Performance Computing)
 
+### Private Subnets and Bastian Hosts
+- _Public Subnets are easily accessible through public internet_
+- Private Subnet route table doesn't have the `igw` route and its not configured to provide public ip addresses to the instances launched into this.
+- There's no way to directly manage this instance through the internet.
 
