@@ -182,9 +182,29 @@ You can setup cloudwatch alarms on `ec2` instances to help monitor the instances
     + Associated with a private IP address on the instance.
     + **Note:** Elastic Fabric Adapter is a network device that you can attach to reduce latency and increase throughput for distributed HPC(High Performance Computing)
 
-### Private Subnets and Bastian Hosts
+### Private Subnets and Bastion Hosts
 - _Public Subnets are easily accessible through public internet_
 - Private Subnet route table doesn't have the `igw` route and its not configured to provide public ip addresses to the instances launched into this.
 - There's no way to directly manage this instance through the internet.
 - A bastian host is a public instance that you used to jump to private instance and it is also known as jump host and through bastian host you will be able to `ssh` into your private instance.
+- We use agent forwarding and use the bastian host to connect to the private subnet instance.
 
+### NAT Instances and NAT Gateways
+
+- **NAT Instance:** Network Address Translation(NAT).Its basically a process of taking the private ip address and translating it to public ip address so it allows you to connect to the public internet.
+    + It's managed by you
+    + The only way to scale this is to do it manually which means using a powerful and bigger instance with more resources and enhanced networking with additional bandwith.
+    + There's no high availability and it has to be done manually.
+    + Need to assign security groups.
+    + Can be used as bastion host.
+    + You can use an Elastic IP address or a public address with a NAT instance.
+    + Can implement port forwarding manually
+- **NAT Gateway:** A better version of NAT Instance. 
+    + Its managed by AWS
+    + Its elastically scaled upto 45 GBps
+    + Provides automatic high availability within an AZ and can be placed in multiple AZs.
+    + No security groups
+    + Cannot be accessed through `ssh`
+    + Choose the Elastic IP address to associate with a NAT instance gateway at creation.
+    + Doesn't support port forwarding.
+- Lastly Private Subnet contains `nat-gateway-id` instead of `igw-id` and anything that isn't defined within `ip cidr block` of private subnet route table is handled by the `nat-gateway-id`.
