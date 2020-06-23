@@ -282,3 +282,23 @@ You can setup cloudwatch alarms on `ec2` instances to help monitor the instances
 ## Elastic Load Balancing and Auto Scaling.
 
 ### Elastic Load Balancing
+Load Balancing refers to efficiently distributing incoming network traffic across a group of backend servers.
+
+### Application Load Balancer
+- Operates at the request level.
+- Routes based on the content of request (Layer 7)
+- Supports path based routing,host based routing,query string parameter based routing and source IP address based routing.
+- Supports IP addresses, Lambda Functions and containers as targets.
+- `HTTPS`,`HTTP`
+- 
+### Network Load Balancer
+- Operates at the connection level.
+- Routes connections based on IP protocol Data (layer 4)
+- Offers ultra high performance,low latency,and TLS offloading at scale.
+- Can have static IP / Elastic IP
+- Supports UDP and static IP addresses as targets.
+
+### Classic Load Balancer
+- Old generation; not recommended for new applications.
+- Performs routing at Layer 4 and Layer 7
+- Use for existing applications running on EC2-Classic instance
