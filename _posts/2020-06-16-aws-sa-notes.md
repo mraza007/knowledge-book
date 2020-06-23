@@ -342,3 +342,31 @@ and make sure there are at least 8 IP addresses available in that order for the 
 - Launch configuration is the template used to create new EC2 instances and includes parameters such as instance family,
 instance type,AMI,keypair and security groups.
 
+<table>
+  <tr>
+    <th>Scaling Option</th>
+    <th>What is it?</th> 
+    <th>When to use?</th>
+  </tr>
+  <tr>
+    <td>Maintain</td>
+    <td>Ensures the required number of instances are running</td>
+    <td>Use when you always need a known number of instances running at all times</td>
+  </tr>
+  <tr>
+    <td>Manual</td>
+    <td>Manually change the desired capacity via console or CLI</td>
+    <td>Use when your needs change rarely enough that you are Ok! to make manual changes.</td>
+  </tr>
+  <tr>
+    <td>Schedule</td>
+    <td>Adjust Min/Max instances on specific dates/times or recurring time periods</td>
+    <td>Use when you know you are busy and quiet times are. Useful for ensuring enough instances are available before busy times</td>
+  </tr>
+    <tr>
+    <td>Dynamic</td>
+    <td>Scale in response to a system load or other triggers using metrics</td>
+    <td>Useful for changing capacity based on system usage eg if cpu hits 80%</td>
+    
+  </tr>
+</table>
