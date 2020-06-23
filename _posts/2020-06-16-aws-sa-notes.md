@@ -335,3 +335,10 @@ and make sure there are at least 8 IP addresses available in that order for the 
     + Includes information about the client(not included in the Cloud Watch Metrics)
     + Can identify requester IP,request type etc.
     + Can be optionally stored and retained in S3.
+### EC2 Auto Scaling
+- You can attach one or more classic ELBs to your existing Auto Scaling Groups.
+- You can attach one or more Target Groups to your ASG to include instances behind an ALB.
+- The ELBs must be in same region.
+- Launch configuration is the template used to create new EC2 instances and includes parameters such as instance family,
+instance type,AMI,keypair and security groups.
+
