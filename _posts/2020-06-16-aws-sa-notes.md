@@ -302,3 +302,36 @@ Load Balancing refers to efficiently distributing incoming network traffic acros
 - Old generation; not recommended for new applications.
 - Performs routing at Layer 4 and Layer 7
 - Use for existing applications running on EC2-Classic instance
+
+### Internet Facing VS Internal
+- Internet Facing:
+    + ELB nodes have public IPs.
+    + Routes traffic to the private IP addresses of the EC2 instances.
+    + Need one public subnet in each AZ where ELB is defined.
+    + ELB dns name format `<name>-<id-number>.<region>.elb.amazonaws.com`
+- Internal only ELB:
+    + ELB nodes have private IPs.
+    + Routes traffic to the private IPs of the EC2 instances.
+    + ELB dns name format `internal-<name>-<id-number>.<region>.elb.amazonaws.com`
+
+### Elastic Load Balancing
+- EC2 instances and containers can be registered against an ELB
+- ELB nodes use IP addresses within your subnets, ensure at least a /27 subnet
+and make sure there are at least 8 IP addresses available in that order for the ELB to scale.
+- An ELB forwards traffic to `eth0` (primary IP address).
+- An ELB listener is the process that checks for the connection requests:
+    + Listeners for CLB provide options for `TCP` and `HTTP`/`HTTPS`.
+    + Listeners for ALB only provide options for `HTTPS` and `HTTP`
+    + Listeners for NLB only provide only `TCP` as an option
+### ELB Security Groups
+- Security Groups control the ports and protocols that can reach the front-end listener.
+- You must assign a security group for the ports and the protocols on the front end listener.
+
+### ELB Monitoring
+- CloudWatch every 1 min.
+- ELB service sends information when requests are active.
+- Access Logs:
+    + Disabled by Default.
+    + Includes information about the client(not included in the Cloud Watch Metrics)
+    + Can identify requester IP,request type etc.
+    + Can be optionally stored and retained in S3.
