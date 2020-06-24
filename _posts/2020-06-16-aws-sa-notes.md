@@ -400,9 +400,28 @@ instance type,AMI,keypair and security groups.
 - Then use a target tracking policy that configures your ASG to scale based on the custom metric and a set target value. Cloud watch alarms invoke the scaling policy.
 - Use a custom `backlog per instance` metric to track not just the number of messages in the queue but the number available for retrieval.
 
-### EC2 Autoscaling - Terminatio Policy
+### EC2 Autoscaling - Termination Policy
 - Termination policies control which instances are terminated first when scale in event occurs.
 - There is default termination policy and options for configuring your own customized termination policies.
 - The default termination policy is designed to help ensure that instances span AZs evenly for High Availability Zones.
 - The default policy is kept generic and flexible to cover a range of scenarios.
 
+## Virtual Private Cloud
+- A Virtual Private Cloud (VPC) is logically isolated from other VPCs on AWS.
+- VPCs are regions specific
+- A default VPC is created in each region with a subnet in each AZ.
+- You can define dedicated tenancy for a VPC to ensure instances are launched on a dedicated hardware.
+- The default VPC has all public subnets.
+- Public Subnets:
+  + `Auto Assign public IPv4 address` set to `Yes`
+  + The subnet route table has an attached Internet Gateway.
+- Instances in the default VPC always have both a `public` and `private` IP addresses.
+- AZ names are mapped to different zones for different users.
+
+### Amazon VPC Components.
+- VPC: A logically isolated virtual network in the AWS cloud. You define VPC's IP address space from ranges you select.
+- Subnet: A segment of a VPC's IP address range where you can place groups of isolated resources (maps to sinlge AZ).
+- Internet Gateway: The Amazon VPC side of a connection to the public internet.
+- NAT Gateway: A highly available,managed Network Address Translation (NAT) service for your resources in a private subnet to access the internet.
+- Hardware VPN Connection: A hardware based VPN connection between your AWS VPC and your data center,home network, or co location facility.
+- Virtual Private Gateway
