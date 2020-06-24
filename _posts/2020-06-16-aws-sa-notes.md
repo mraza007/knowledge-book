@@ -394,3 +394,8 @@ instance type,AMI,keypair and security groups.
     <td>Useful when you want to vary adjustments based on the size of the alarm breach</td>
   </tr>
 </table>
+
+- Can also scale based on AWS SQS.
+- Uses a custom metric that's sent to Amazon Cloud Watch that measures the number of messages in the queue per EC2 instance in the auto scaling group.
+- Then use a target tracking policy that configures your ASG to scale based on the custom metric and a set target value. Cloud watch alarms invoke the scaling policy.
+- Use a custom `backlog per instance` metric to track not just the number of messages in the queue but the number available for retrieval
