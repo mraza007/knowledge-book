@@ -398,4 +398,11 @@ instance type,AMI,keypair and security groups.
 - Can also scale based on AWS SQS.
 - Uses a custom metric that's sent to Amazon Cloud Watch that measures the number of messages in the queue per EC2 instance in the auto scaling group.
 - Then use a target tracking policy that configures your ASG to scale based on the custom metric and a set target value. Cloud watch alarms invoke the scaling policy.
-- Use a custom `backlog per instance` metric to track not just the number of messages in the queue but the number available for retrieval
+- Use a custom `backlog per instance` metric to track not just the number of messages in the queue but the number available for retrieval.
+
+### EC2 Autoscaling - Terminatio Policy
+- Termination policies control which instances are terminated first when scale in event occurs.
+- There is default termination policy and options for configuring your own customized termination policies.
+- The default termination policy is designed to help ensure that instances span AZs evenly for High Availability Zones.
+- The default policy is kept generic and flexible to cover a range of scenarios.
+
