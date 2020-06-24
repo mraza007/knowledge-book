@@ -370,3 +370,27 @@ instance type,AMI,keypair and security groups.
     
   </tr>
 </table>
+
+### EC2 Autoscaling - Scaling Types
+<table style="width:50%">
+  <tr>
+    <th>Scaling</th>
+    <th>What is it?</th> 
+    <th>When to use?</th>
+  </tr>
+  <tr>
+    <td>Target Tracking Policy</td>
+    <td>The scaling adds or removes capacity as required to keep the metric at or close to the specified target value</td>
+    <td>A use case,when you want to keep the aggregate CPU usage of your ASG at 70%</td>
+  </tr>
+  <tr>
+    <td>Simple Scaling Policy</td>
+    <td>Waits until health check and cool down period expires before revaluating</td>
+    <td>This is more conservative way to add/remove instances.Useful when load is eratic.AWS recommend step scaling instead of simple in most cases</td>
+  </tr>
+  <tr>
+    <td>Step Scaling Policy</td>
+    <td>Increase or decrease the current capacity of your Auto Scaling group based on a set of scaling adjustments known as step adjustments</td>
+    <td>Useful when you want to vary adjustments based on the size of the alarm breach</td>
+  </tr>
+</table>
