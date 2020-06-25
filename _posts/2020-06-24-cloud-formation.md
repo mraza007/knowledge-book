@@ -57,3 +57,27 @@ A simple CloudFormation script that initiates EC2 instances with SSH
   }
 }
 ```
+
+### Starting Windows Machine using CloudFormation
+
+```yaml
+Description: "A simple script that starts Window EC2 instances on AWS Cloud"
+Resources:
+  WinInstance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      SecurityGroups:
+        - !Ref InstanceGroupSecurity
+      InstanceType: # t1.micro
+      KeyName: # Your key
+      ImageId: ""
+  InstanceGroupSecurity:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: '' # Description
+      SecurityGroupIngress:
+        - IpProtocol: # Enter Protocol Like TCP
+          FromPort: # RDP Port
+          ToPort: 3389
+          CidrIp: 0.0.0.0/0
+```
