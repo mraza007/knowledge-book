@@ -489,3 +489,6 @@ instance type,AMI,keypair and security groups.
 - You can create custom network ACLs. By default each custom network ACL denies all the inbound and outbound traffic until you add rules.
 - You can associate a network ACL with multiple subnets; however a subnet can only be associated with one network ACL at a time.
 - Network ACLs do not filter traffic between instances in the same subnet.
+- NACLs are preffered option when it comes to blocking specific IPs or ranges.
+- Security groups cannot be used to block specific ranges of IPs.
+- NACL is the first line of defence, the secuirty group is the second.
