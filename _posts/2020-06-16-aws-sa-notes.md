@@ -424,4 +424,53 @@ instance type,AMI,keypair and security groups.
 - Internet Gateway: The Amazon VPC side of a connection to the public internet.
 - NAT Gateway: A highly available,managed Network Address Translation (NAT) service for your resources in a private subnet to access the internet.
 - Hardware VPN Connection: A hardware based VPN connection between your AWS VPC and your data center,home network, or co location facility.
-- Virtual Private Gateway
+- Virtual Private Gateway: The VPC side of an VPN Connection.
+- Customer Gateway: Our side of a VPN Connection.
+- Router: Routers interconnect subnets and direct traffic between Internet gateways,virtual private gateways, NAT gateways and subnets.
+- Peering Connection: A peering connection allows you to route traffic via private IP addresses between two peered VPCs
+- VPC Endpoints: Enables private connectivity to services hosted in AWS from within VPC without using an Internet Gateway,VPN,NAT Devices or firewall proxies.
+- Egress-only Internet Gateway: A stateful gateway to provide egress only access for IPv6 traffic from the VPC to the internet.
+
+### Amazon VPC - Routing
+- The VPC router performs routing between AZs within a region.
+- The VPC router connects different AZs together and connects the VPC to the internet Gateway.
+- Each subnet has a route table the router uses to forward traffic withing the VPC.
+- Route tables also have entries to external destinations.
+
+### Amazon VPC - Subnets
+- Types of subnets:
+  + If a subnet's traffic is routed to an internet gateway the subnet is known as a public subnet.
+  + If a subnet doesn't have a route to the internet gateway the subnet is known as private subnet.
+  + The VPC is created with a master address range(CIDR block,can be anywhere from 16-28 bits) and subnet ranges are created within that range.
+  + New subnets are always associated with the default route table
+  + Once VPC is created you cannot change the CIDR block.
+  + You cannot created additional CIDR blocks that overlap with existing CIDR blocks
+  + You cannot create additional CIDR blocks in a different RFC 1918 range.
+  + Subnets with overlapping IP address ranges cannot be created
+  + The first 4 and last 1 IP address in a subnet are reserved.
+  + Subnets are created within AZs
+  + Subnets map 1:1 to AZs and cannot span AZs.
+
+### Amazon VPC - Internet Gateways.
+- An Internet Gateway serves two purposes:
+  + To provide a target in your vpc route tables for internet routable traffic.
+  + To perform network address translation(NAT) for instances that have been assigned public IPv4 addresses.
+- Internet Gateways must be created and then attached to a VPC, be added to a route table and then associated with the relevant subnets.
+- No availability risk or bandwidth constraints.
+- You cannot have multiple Internet Gateways in a VPC
+- Egress-Only internet Gateway provides outbound Internet Access for IPv6 addressed instances.
+
+### Amazon VPC - Secuirty Groups
+- Security Group act like a firewall at the instance level (network interface) level.
+- Can only assign permit rules in a security group, cannot assign deny rules.
+- All rules are evaluated until a permit is encountered or continues until the implicit deny.
+- Can control ingress and egress traffic.
+- Security groups are stateful
+- By default, custom security groups do not have inbound allow rules (all inbound traffic is denied by default).
+- By defualt, default security groups do have inbound allow rules (allowing traffic from within the group).
+- All outbound traffic is allowed by default in custom abd default security groups.
+- You cannot delete the security group that's created by default within a VPC.
+- You can use security group names as the source of destination in other security groups.
+- You can use the security group name as a source in its own inbound rules.
+- Secuirty group membership can be changed whilst instances are running.
+- Any changes made will take effect immediately.
