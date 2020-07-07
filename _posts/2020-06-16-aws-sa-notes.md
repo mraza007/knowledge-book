@@ -520,3 +520,16 @@ instance type,AMI,keypair and security groups.
     <td>Automatically applies to all instances in the subnets its associated with</td>
   </tr>
 </table>
+
+
+### Amazon VPC - Connectivity
+- There are several methods of connecting to a vpc and these include
+- AWS Managed VPN
+- AWS Direct Connect
+- AWS Direct Connect plus a VPN
+- AWS VPN CloudHub.
+- Software VPN
+- Transit VPC.
+- VPC Peering
+- AWS Private Link
+- VPC Endpoints
