@@ -492,3 +492,31 @@ instance type,AMI,keypair and security groups.
 - NACLs are preffered option when it comes to blocking specific IPs or ranges.
 - Security groups cannot be used to block specific ranges of IPs.
 - NACL is the first line of defence, the secuirty group is the second.
+- Changes to NACL take immediately.
+
+<table>
+  <tr>
+    <th>Security Group</th>
+    <th>Network ACL</th> 
+  </tr>
+  <tr>
+    <td>Operates at the instance level</td>
+    <td>Operates at the subnet level</td>
+  </tr>
+  <tr>
+    <td>Support allow rules only</td>
+    <td>Supports allow and deby rules only</td>
+  </tr>
+  <tr>
+    <td>Stateful</td>
+    <td>Stateless</td>
+  </tr>
+   <tr>
+    <td>Evaluates all rules</td>
+    <td>Processes rules in order</td>
+  </tr>
+   <tr>
+    <td>Applies to an instance only if associated with a group</td>
+    <td>Automatically applies to all instances in the subnets its associated with</td>
+  </tr>
+</table>
