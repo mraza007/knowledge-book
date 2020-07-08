@@ -634,4 +634,4 @@ You also need to create a DHCP options set.
     + Status of other health checks
     + Status of cloudwatch alarm 
 
-Route 53 supports most of the DNS record types.
+Route 53 supports most of the DNS record types; `Alias` record is specific to Route 53 and its pointed to DNS name of the service.
