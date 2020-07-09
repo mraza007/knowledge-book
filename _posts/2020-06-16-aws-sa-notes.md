@@ -734,4 +734,22 @@ Route 53 supports most of the DNS record types; `Alias` record is specific to Ro
 - Used for enabling DNS resolution for hybrid clouds.
 - Route 53 Resolver Endpoints.
     + Inbound query capability is provided by Route 53 Resolver Endpoints,allowing DNS queries that originate on-premises to resolve AWS hosted domains.
-    + 
+    + Connectivity needs to be established between your on-premise DNS infrastructure and AWS through a DirectConnect or a VPN.
+    + Endpoints are configured through IP address assignment in each subnet for you would like to provide a resolver.
+- Conditional Forwarding Rules:
+    + Outbound DNS queries are enabled through the use of Conditional Forwarding Rules.
+    + Domains hosted within your on-premise DNS infrastructure can be configured as forwarding rules in Route 53 Resolver.
+    + Rules will trigger when a query is made to one of those domains and will attempt to forward DNS requests to your DNS servers that were configured along with the rules.
+    + Like the inbound queries,this requires a private connection over DX or VPN.
+
+### AWS Global Accelarator
+- AWS Global Accelarator is a service that improves the availability and performance of applications with local or global users.
+- It provides static IP addresses that act as a fixed entry point to application endpoints in a single or multiple AWS Regions, such as ALB,NLB or EC2 instances.
+- Uses AWS Global Network to optimize the path from users to applications,improving the performance of TCP and UDP traffic.
+- AWS Global Accelarator continually monitors the health of the application endpoints and will detect an unhealthy endpoint and redirect traffic to healthy endpoints in less than 1 minute.
+- Uses Redundant (two) static anycast IP addresses in different network Zones (A & B).
+- The redundant pair are globally advertized.
+- Uses AWS Edge Locations - addresses are announced from multiple edge locations at the same time.
+- Addresses are associated to regional AWS resources or endpoints.
+- AWS Global Accelarator IP addresses serve as the frontend interface of the applications.
+- Intelligent traffic distribution: Routes connections to the closest point of presence for applications.
