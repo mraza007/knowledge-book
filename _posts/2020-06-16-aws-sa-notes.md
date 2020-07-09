@@ -753,3 +753,4 @@ Route 53 supports most of the DNS record types; `Alias` record is specific to Ro
 - Addresses are associated to regional AWS resources or endpoints.
 - AWS Global Accelarator IP addresses serve as the frontend interface of the applications.
 - Intelligent traffic distribution: Routes connections to the closest point of presence for applications.
+
