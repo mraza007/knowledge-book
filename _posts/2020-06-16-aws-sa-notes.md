@@ -927,4 +927,5 @@ For instance Netflix might use this service to deliver their content globally.
   + Egress to distribute the content
 - You can use a zone apex DNS name on cloudfront
 - CloudFront supports wildcard `CNAME`.
+- Supports `SSL` certificates, Dedicated IP, Custom SSL and SNI Custom SSL (Cheaper)
 
