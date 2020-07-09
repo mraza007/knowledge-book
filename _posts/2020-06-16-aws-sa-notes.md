@@ -917,3 +917,14 @@ Amazon Simple Storage Service is a object storage service built to store and ret
 - Retry Requests for Latency-Sensitive Applications
 - Combine Amazon S3 (Storage) and Amazon EC2 (Compute) in the Same AWS Region.
 - Use Amazon S3 Transfer accelaration to minimize Latency Caused by the distance.
+
+## Amazon CloudFront
+Cloud front is web service that distributes content with low latency and high data transfer speeds. Its usually used for dynamic,static,streaming and interactive content.
+For instance Netflix might use this service to deliver their content globally.
+
+- CloudFront is Global Service:
+  + Ingress to upload objects.
+  + Egress to distribute the content
+- You can use a zone apex DNS name on cloudfront
+- CloudFront supports wildcard `CNAME`.
+
