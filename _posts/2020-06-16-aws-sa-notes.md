@@ -810,4 +810,103 @@ Amazon Simple Storage Service is a object storage service built to store and ret
   </tr>
 </table>
 
+- You can use S3 for following:
+  + Backup and Storage: Providing data backup and storage services for others
+  + Application Hosting: Provides services that deploy,install,and manage web applications.
+  + Media Hosting: Building a redudant,scalable,and highly available insfrastrucute that hosts video,photo,or music uploads and downloads.
+  + Software Delivery: Hosting software applications that customers can download.
+  + Static Website: Hosting static sites such as html pages or blogsite.
 
+### Amazon S3 Buckets
+- Files are stored in the bucket:
+    + A bucket can be viewed as a container for objects.
+    + A bucket is a flat container of objects.
+    + It doesn't provide a hiearchy of objects.
+    + You can use an object key name(prefix) to mimic folders.
+- 100 buckets per account by default.
+- You can store unlimited objects in your buckets.
+- You can create folders in your buckets 
+- You cannot create nested buckets.
+- An S3 Bucket is region specific.
+
+### Amazon S3 Objects:
+- Each object is stored and retrieved by a unique key (ID or name).
+- An object in S3 is uniquely identified and addressed through:
+    + Service end point.
+    + Bucket Name
+    + Object Key
+    + Optionally an object version
+- Objects stored in a bucket will never leave the region in which they are stored unless you move them to another region or enable cross-region replication.
+- You can define permissions on objects when uploading and at any time afterwards using the AWS management console.
+
+### Amazon S3 Sub-resources
+- Sub resources (configuration containers) associated with the buckets include:
+    + Lifecycle - define an object's lifecyle.
+    + Website - configuration for hosting static sites.
+    + Versioning - retain multiple versions of objects as they are changed
+    + Access Control Lists (ACLs) - control permissions access to the bucket.
+    + Bucket Policies - control access to the bucket.
+    + CORs (Cross Origin Sharing Resources).
+    + Logging
+
+### Amazon S3 Storage Classes
+- Storage classes include:
+    + S3 Standard (durable,immediately available,frequent access)
+    + S3 Intelligent-Tiering (automatically moves data to the most cost effective tiering)
+    + S3 Standard-IA (durable,immediately-available,infrequent access)
+    + S3 One Zone-IA (lower cost for infrequently accessed data with less resilience)
+    + S3 Glacier (archieved data,longer retrieval times)
+    + S3 Glacier Deep Archive (lowest cost storage class for long term retention).
+
+### Amazon S3 Multipart upload
+- Multipart upload uploads objects in parts independently, in a parallel and in any order.
+- Performed using the S3 Multipart upload API.
+- It is recommended for objects larger than `100MB` or `100MB`
+- Can be used for objects from 5MB upto 5TB.
+- Must be used for objects larger than 5GB.
+
+### Amazon S3 Copy 
+- You can create a copy of objects upto 5GB in size in a single atomic operation.
+- For files larger than 5GB you must use the multipart upload API.
+- Can be performed using the AWS SDKs or REST API.
+- The copy operation can be used to:
+    + Generate additional copies of the objects.
+    + Renaming the objects
+    + Changing the copy's storage class or encryption at rest status
+    + Move objects across AWS locations/regions
+    + Change object metadata.
+
+### Amazon S3 Transfer Accelaration
+- Amazon S3 Transfer Accelaration enables fast,easy,and secure transfers of files over long distances between your client and your S3 bucket.
+- S3 Transfer Accelaration leverages Amazon CloudFront's globally distributed AWS Edge Locations.
+- Used to accelarate object uploads to S3 over long distances (latency)
+- Transfer accelaration is as secure as a direct upload to S3
+- You are charged only if there was a benefit in the transfer times
+- Need to enable transfer accelaration on S3 bucket.
+- Cannot be disabled, can only be suspended
+
+### Amazon S3 Encryption 
+
+<table style="width:100%">
+  <tr>
+    <th>Option</th>
+    <th>How it works</th>
+  </tr>
+  <tr>
+  <td>SSE-S3</td>
+  <td>Use S3's existing encryption key for AES-256</td> 
+  </tr>
+  <tr>
+  <td>SSE-C</td>
+  <td>Upload your own AES-256 encryption key which uses S3 uses when it writes objects</td>
+  </tr>
+  <tr>
+  <td>SSE-KMS</td>
+  <td>Use a key generated and managed by AWS KMS</td>
+  </tr>
+  <tr>
+  <td>Client-Side</td>
+  <td>Encrypt objects using your own local encryption process before uploading to S3</td>
+  </tr>
+</table>
+ 
