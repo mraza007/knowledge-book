@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AWS Certification Notes for Solutions Architect Associate
+title: Everything you need to know for SAA Exam
 tags : [aws,certification,solutions-architect]
 published: false
 description: notes compiled for people studying for aws solutions architect associate certification.
