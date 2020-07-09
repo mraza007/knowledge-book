@@ -635,3 +635,61 @@ You also need to create a DHCP options set.
     + Status of cloudwatch alarm 
 
 Route 53 supports most of the DNS record types; `Alias` record is specific to Route 53 and its pointed to DNS name of the service.
+
+### CNAME vs Alias
+
+<table>
+  <tr>
+    <th>CNAME</th>
+    <th>ALIAS</th>
+  </tr>
+  <tr>
+  <td>Route 53 charges for CNAME queries</td>
+  <td>Route 53 doesn't charge for alias queries to AWS resources</td> 
+  </tr>
+  <tr>
+  <td>You cannot create a CNAME record at the top of a DNS namespace (zone apex)</td>
+  <td>You can create ALIAS record at the zone apex (You cannot route to a CNAME at the zone apex)</td>
+  </tr>
+  <tr>
+  <td>A CNAME can point to any DNS record that is hosted anywhere</td>
+  <td>An alias record can only point to  a CLoudFront distribution,Elastic BeanStalk,ELB,S3 bucket as a static site or to another record in the same hosted zone that you are creating the alias record in</td>
+  </tr>
+</table>
+
+### Route 53 Routing Policies
+
+<table style="width:100%">
+  <tr>
+    <th>Policy</th>
+    <th>What it does</th>
+  </tr>
+  <tr>
+  <td>Simple</td>
+  <td>Simple DNS response by providing the IP address associated with a name</td> 
+  </tr>
+  <tr>
+  <td>Failover</td>
+  <td>If primary is down(based on health checks) routes to secondary destination</td>
+  </tr>
+  <tr>
+  <td>Geolocation</td>
+  <td>Uses geographic location you are in (eg US) routes to closest location</td>
+  </tr>
+  <tr>
+  <td>Geoproximity</td>
+  <td>Routes you to the closest region within geographic area</td>
+  </tr>
+  <tr>
+  <td>Latency</td>
+  <td>Directs you based on the lowest latency routes</td>
+  </tr>
+  <tr>
+  <td>Multivalue answer</td>
+  <td>Returns several IP addresses and functions as a basic load balancer</td>
+  </tr>
+  <tr>
+  <td>Weighted</td>
+  <td>Uses the relative weights assigned to resources to determine which route to</td>
+  </tr>
+</table>
