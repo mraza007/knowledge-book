@@ -693,3 +693,45 @@ Route 53 supports most of the DNS record types; `Alias` record is specific to Ro
   <td>Uses the relative weights assigned to resources to determine which route to</td>
   </tr>
 </table>
+
+- Simple
+    + An `A` record is mapped to one or more IP addresses.
+    + Uses round robin
+    + Does not support health checks.
+- Failover:
+    + Failover to a secondary IP address.
+    + Associated with a health check
+    + Used for active-passive
+    + Can be used with an ELB.
+- Geolocation:
+    + Caters to different users in different countries and different languages.
+    + Contains users within a specific geography and offers them a customized version of the workloads based on their specific needs.
+    + Geolocation can be used for localizing the content and presenting some or all of your website in the language of the users.
+    + Can also protect distribution rights.
+    + Can be used for spreading load evenly between regions.
+    + If you have multiple records for overlapping regions,Route 53 will route to the smallest geographic region.
+- Geoproximity:
+    + Use for routing the traffic based on the location of resources and optionally shift traffic from resources in one location to resources in another.
+- Latency Based Routing:
+    + AWS maintains a database of latency from different parts of the world.
+    + Focused on improving performance by routing to the region with the lowest latency.
+- Multi-value answer:
+    + Use for responding to the DNS queries with upto 8 healthy records selected at random.
+- Weighted:
+    + Similar to simple but you can specify a weight per IP address.
+        * You create records that have same name and type and assign each record a relative weight.
+
+### Route 53 Traffic Flow
+- Route 53 traffic flow provides Global Traffic Management services.
+- Traffic flow policies allow you to create routing configurations for resources using routing types such as failover and geolocation.
+- Create policies that route traffic based on specific constraints,including latency,endpoint health,load,geo-proximity and geography.
+- Scenarios:
+    + A backup page in Amazon S3 for a website.
+    + Building routing policies that consider an end users geographic location,proximity to an AWS region,and the health of each of your endpoints.
+
+### Route 53 Resolver
+- It's a set of features that enable bi-directional querying between on-premise and AWS other private connections.
+- Used for enabling DNS resolution for hybrid clouds.
+- Route 53 Resolver Endpoints.
+    + Inbound query capability is provided by Route 53 Resolver Endpoints,allowing DNS queries that originate on-premises to resolve AWS hosted domains.
+    + 
