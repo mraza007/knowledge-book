@@ -929,3 +929,29 @@ For instance Netflix might use this service to deliver their content globally.
 - CloudFront supports wildcard `CNAME`.
 - Supports `SSL` certificates, Dedicated IP, Custom SSL and SNI Custom SSL (Cheaper)
 
+Amazon CloudFront Edge Locations and Regional Edge Caches
+- An edge location is the location where the content is cached.
+- Requests are automatically routed to the nearest edge location
+- Edge locations are not tied to Availability Zones or Regions
+- Regional Edge caches are located between origin web servers and global edge locations and have a larger cache.
+- Regional Edge Caches have a larger cache-width than any individual edge location so your objects remain in cache longer at these locations.
+- Regional Edge caches aim to get content closer to users.
+
+### Amazon CloudFront Origins
+- An origin is the origin of the files that CDN will distribute.
+- Origins can be either an S3 bucket,an EC2 instance,an ELB,or Route 53 - can also be external.
+- A custom origin server is a HTTP server which can be an EC2 instance or an on-premise/non AWS web servers.
+- Amazon EC2 instances are considered custom origins.
+- Static sites on Amazon S3 are also considered custom origins.
+
+### Amazon CloudFront Distributions
+- There are two types of distribution.
+- Web:
+    + Static and Dynamic content including `.html`,`.js` or `.css`.
+    + Distributes files over `HTTPS` or `HTTP`
+    + Add,update,or delete objects and data from submit forms.
+    + Use live streaming to stream an event in realtime.
+- RMTP:
+    + Distribute streaming media files using Adobe FLash Media Server's RTMP protocol.
+    + Allows an end user to begin playing a media file before the file has finished downloading from a CloudFront edge location
+    + Files must be stored in an S3 bucket.
