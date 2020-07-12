@@ -6,7 +6,7 @@ published: true
 description: A simple command to view git log.
 ---
 
-So I  found a useful command that allows you to view entire git log of the repo. 
+So I found a useful command that allows you to view entire git log of the repo. 
 
 ```console
 git log --decorate --graph --oneline --all
