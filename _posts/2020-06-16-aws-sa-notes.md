@@ -928,6 +928,11 @@ For instance Netflix might use this service to deliver their content globally.
 - You can use a zone apex DNS name on cloudfront
 - CloudFront supports wildcard `CNAME`.
 - Supports `SSL` certificates, Dedicated IP, Custom SSL and SNI Custom SSL (Cheaper)
+- You can restrict access to the content using the following methods:
+  + Restrict access to content using the signed cookies or signed URLs.
+  + Restrict access to objects in your S3 bucket.
+- A special type of user called an Origin Access Identity (OAI) can be used to restrict access to content in an Amazon S3 bucket.
+- By using an OAI you can restrict users so they cannot access the content directly using the S3 url,they must connect via CloudFront.
 
 Amazon CloudFront Edge Locations and Regional Edge Caches
 - An edge location is the location where the content is cached.
@@ -955,3 +960,6 @@ Amazon CloudFront Edge Locations and Regional Edge Caches
     + Distribute streaming media files using Adobe FLash Media Server's RTMP protocol.
     + Allows an end user to begin playing a media file before the file has finished downloading from a CloudFront edge location
     + Files must be stored in an S3 bucket.
+
+
+
