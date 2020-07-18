@@ -986,5 +986,6 @@ Amazon CloudFront Edge Locations and Regional Edge Caches
 - Root EBS volumes are deleted on termination by default.
 - Extra non-boot volumes are not deleted on termination by default.
 - The behavior can be changed by altering the `DeleteOnTermination` attribute.
+- 
 
 
