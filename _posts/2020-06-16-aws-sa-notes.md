@@ -987,7 +987,7 @@ Amazon CloudFront Edge Locations and Regional Edge Caches
 - Extra non-boot volumes are not deleted on termination by default.
 - The behavior can be changed by altering the `DeleteOnTermination` attribute.
 
-**Note**: These are very comprehensive but does cover everything but if you like to add more to it feel free fork this and create a PR. I would be happy to add new info to this.
+**Note**: These are comprehensive and covers almost everything but if you like to add more to it feel free fork this and create a PR. I would be happy to add your new changes
 - [REPO LINK](https://github.com/mraza007/knowledge-book/edit/master/_posts/2020-06-16-aws-sa-notes.md)
 - [Main Blog](https://muhammadraza.me/)
 
