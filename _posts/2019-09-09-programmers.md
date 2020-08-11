@@ -11,4 +11,4 @@ published: true
 - [x] `:%s/$/HelloWorld/` This command allows to add something end of the line(Note:This command saved me so much time when formating data.)
 - [x] `:%s!^!//!` This vim command will add something in the beginning of the line.
 - [x] I learned about created userforms in excel and mapping the userinputs to the excel macros
-- [x] you can open python documentation using ``python3 -m pydoc -p <specify_port>``
+- [x] you can open python documentation using `python3 -m pydoc -p <specify_port>`
