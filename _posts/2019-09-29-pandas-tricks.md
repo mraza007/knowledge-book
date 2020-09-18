@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My Favorites Pandas Tricks"
-tags : [python,pandas]
+tags : [python]
 ---
 
 In this post I will be writing about my favorite tricks about pandas that I use when doing some data analysis.

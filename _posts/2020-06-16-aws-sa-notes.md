@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Everything you need to know for SAA Exam
-tags : [aws,certification,solutions-architect]
+tags : [aws]
 published: true
 description: notes compiled for people studying for aws solutions architect associate certification.
 ---

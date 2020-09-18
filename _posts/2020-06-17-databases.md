@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Databases (AWS Services)
-tags : [aws-services,aws,databases]
+tags : [aws]
 published: true
 ---
 

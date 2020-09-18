@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Connecting to Projector using XRANDR
-tags : [shell,linux]
+tags : [linux]
 ---
 
 `XRANDR` is a commandline utility that allows you to connect to an external monitor or projector. I use this utility since I don't have any access to gui that allows me to connect to project so I have us `xrandr` to connect to projectors.

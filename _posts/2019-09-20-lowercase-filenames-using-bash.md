@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A script that allows you lowercase file names"
-tags : [shell,quickhack]
+tags : [linux]
 ---
 
 A simple script that allows you turn all the files names to lowercase

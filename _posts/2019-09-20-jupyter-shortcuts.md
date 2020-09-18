@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jupyter Keyshotcuts that helps developer remain productive"
-tags : [python,jupyter]
+tags : [jupyter]
 ---
 
 There are certain jupyter key shortcuts/tricks that helps developers remain more productive.

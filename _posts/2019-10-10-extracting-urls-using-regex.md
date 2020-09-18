@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Regex To Extract Links.
-tags : [regex,quickhack]
+tags : [linux]
 ---
 
 In order to extract links from a file we can use regular expressions

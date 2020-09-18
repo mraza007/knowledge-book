@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Enabling Wifi on Linux using CLI
-tags : [shell,linux]
+tags : [linux]
 ---
 
 When wifi has a soft block due to some faulty software or kernal it can be enabled using `rfkill`

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Generating SSH Keys for you Machine
-tags : [shell,linux]
+tags : [linux]
 ---
 
 In order to generate private and public ssh keys we run this command `ssh-key`

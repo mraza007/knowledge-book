@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Natural Language Processing"
-tags : [nlp,theory]
+tags : [theory]
 ---
 
 NLP is a branch of computer science that allows computers to understand Human Language.Using NLP we are able to derive meaningful insights and use them in practical applications such as 

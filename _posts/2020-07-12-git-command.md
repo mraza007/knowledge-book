@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git Log
-tags : [git,devops,quickhack]
+tags : [devops]
 published: true
 description: A simple command to view git log.
 ---

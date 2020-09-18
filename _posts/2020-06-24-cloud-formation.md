@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CloudFormation 
-tags : [deployment,iaas,devops]
+tags : [devops]
 published: true
 description: what cloudformation and how it works.
 ---
